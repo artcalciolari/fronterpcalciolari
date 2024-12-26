@@ -1,0 +1,84 @@
+.criar-produto {
+  padding: 20px;
+  background-color: #ffff;
+  border-radius: 8px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.criar-produto h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #2C3A2C;
+  margin-bottom: 20px;
+}
+
+.criar-produto .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.criar-produto input, .criar-produto select {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #2C3A2C;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #2C3A2C;
+  background-color: #F7F7EB;
+  box-sizing: border-box;
+}
+
+.criar-produto select {
+  appearance: none;
+  cursor: pointer;
+}
+
+.criar-produto input::placeholder, .criar-produto select::placeholder {
+  color: #888;
+  font-style: italic;
+}
+
+.criar-produto input:focus, .criar-produto select:focus {
+  outline: none;
+  border-color: #3e4b3e;
+  box-shadow: 0 0 5px rgba(46, 75, 46, 0.5);
+}
+
+.criar-produto button.submit-button {
+  width: 100%;
+  padding: 10px 15px;
+  background-color: #2C3A2C;
+  color: #F7F7EB;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.criar-produto button.submit-button:hover {
+  background-color: #3e4b3e;
+}
+
+.criar-produto label {
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #2C3A2C;
+}
+
+@media (max-width: 768px) {
+  .criar-produto {
+    padding: 15px;
+    max-width: 90%;
+  }
+
+  .criar-produto input, .criar-produto select, .criar-produto button.submit-button {
+    width: 100%;
+  }
+}

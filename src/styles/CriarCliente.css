@@ -1,0 +1,62 @@
+.criar-cliente {
+    background: none;
+    color: #2C3A2C;
+    padding: 20px;
+    border-radius: 10px;
+    width: 60%;
+    margin: 20px auto;
+    font-family: 'Work Sans', sans-serif;
+    box-shadow: none;
+  }
+  
+  .criar-cliente h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #444;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #444;
+    background: #F7F7EB;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: 'Work Sans', sans-serif;
+  }
+  
+  .form-group input:focus {
+    border-color: #2C3A2C;
+    outline: none;
+  }
+  
+  .submit-button {
+    display: block;
+    width: 100%;
+    background: #2C3A2C;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  
+  .submit-button:hover {
+    background: #444;
+  }
+  
