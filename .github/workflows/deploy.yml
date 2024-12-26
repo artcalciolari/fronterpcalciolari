@@ -1,0 +1,41 @@
+name: CI/CD Docker deployment
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: self-hosted
+    permissions:
+      packages: write
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # Login to GitHub Container Registry
+      - name: Login no GitHub Container Registry
+        run: |
+          echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+      # Build the Docker image
+      - name: Build Docker image
+        run: |
+          docker build -t ghcr.io/${{ github.repository }}/frontend:latest .
+
+      # Push the Docker image to GitHub Container Registry
+      - name: Push image to Container Registry
+        run: |
+          docker push ghcr.io/${{ github.repository }}/frontend:latest
+
+      # Deploy image to self-hosted runner
+      - name: Deploy image to self-hosted runner
+        run: |
+          docker stop frontend || true
+          docker rm frontend || true
+          docker run -d -p 3000:80 --name frontend --network prod-network --restart unless-stopped ghcr.io/${{ github.repository }}/frontend:latest
